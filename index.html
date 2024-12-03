@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Proyecto de Inicio de Sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" 
+rel="stylesheet">
+</head>
+<body>
+
+<div>
+    <h2>Iniciar Sesión</h2>
+    <p>Bienvenido a tu CRM de Subastas</p>
+
+    <form id="loginForm" novalidate>
+
+       
+        <div class="container">
+            <label for="email"></label>
+            <div class="input-wrapper">
+                <input type="email" name="email" id="email" required autocomplete="off" placeholder = "Correo electrónico">
+                <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="mail-icon">
+                    <path d="M0.0644531 5.06816V13.9091C0.0644531 15.6162 1.4483 17 3.15536 17H18.6099C20.317 17 21.7008 15.6162 
+                    21.7008 13.9091V5.06816L12.5026 10.7286C11.5091 11.34 10.2561 11.34 9.2627 10.7286L0.0644531 5.06816Z"/>
+                    <path d="M21.7008 3.25352V3.09091C21.7008 1.38385 20.317 0 18.6099 0H3.15536C1.4483 0 0.0644531 1.38385 0.0644531 
+                    3.09091V3.25352L10.0727 9.41242C10.5694 9.71809 11.1959 9.71809 11.6926 9.41242L21.7008 3.25352Z"/>
+                </svg>
+            </div>
+            <div id="emailError" class="error-message"></div>
+        </div>
+
+        <div class="container">
+            <label for="password"></label>
+            <div class="input-wrapper">
+                <input type="password" name="password" id="password" required autocomplete="off" placeholder="Contraseña">
+                <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="password-icon">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.74302 0C4.39581 0 2.49302 1.90279 2.49302 4.25V6.67857C1.15176 
+                    6.67857 0.0644531 7.76588 0.0644531 9.10714V14.5714C0.0644531 15.9127 1.15176 17 2.49302 17H10.993C12.3343 17 13.4216 
+                    15.9127 13.4216 14.5714V9.10714C13.4216 7.76588 12.3343 6.67857 10.993 6.67857V4.25C10.993 1.90279 9.09023 0 6.74302 0ZM9.77874 6.67857V4.25C9.77874 
+                    2.57342 8.4196 1.21429 6.74302 1.21429C5.06645 1.21429 3.70731 2.57342 3.70731 4.25V6.67857H9.77874Z"/>
+                </svg>
+                <button type="button" id="togglePassword" class="password-toggle" aria-label="Mostrar contraseña">
+
+                    <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidePassword" id="hideIcon";>
+                        <path d="M2.29445 0.191507C2.0391 -0.0638357 1.62511 -0.0638357 1.36977 0.191507C1.11442 0.44685 1.11442 0.860843 1.36977 1.11619L17.0621 
+                        16.8085C17.3174 17.0638 17.7314 17.0638 17.9868 16.8085C18.2421 16.5532 18.2421 16.1392 17.9868 
+                        15.8838L2.29445 0.191507Z"/>
+                        <path d="M18.9854 8.98237C18.5112 10.4081 17.7185 11.6886 16.6916 12.7393L13.9903 10.038C14.1618 9.55736 
+                        14.2552 9.03958 14.2552 8.5C14.2552 5.97223 12.206 3.92308 9.67826 3.92308C9.13868 3.92308 8.6209 4.01645 8.14021 
+                        4.18792L5.98096 2.02866C7.12201 1.56384 8.37037 1.30769 9.67871 1.30769C14.0118 1.30769 17.687 4.11724 18.9851 8.01219C19.0901 
+                        8.32696 19.0902 8.66754 18.9854 8.98237Z"/>
+                        <path d="M12.9475 8.5C12.9475 8.65707 12.9364 8.81155 12.915 8.9627L9.21556 5.26326C9.36671 5.24185 9.52119 5.23077 9.67826 
+                        5.23077C11.4838 5.23077 12.9475 6.69445 12.9475 8.5Z"/>
+                        <path d="M10.141 11.7367L6.44152 8.0373C6.42011 8.18845 6.40903 8.34293 6.40903 8.5C6.40903 10.3055 7.87271 11.7692 
+                        9.67826 11.7692C9.83533 11.7692 9.98981 11.7582 10.141 11.7367Z"/>
+                        <path d="M5.10134 8.5C5.10134 7.96042 5.19471 7.44264 5.36618 6.96195L2.6646 4.26038C1.63758 5.31117 0.844774 
+                        6.59176 0.370465 8.01763C0.265737 8.33246 0.265837 8.67304 0.37075 8.98781C1.66894 12.8828 5.34411 15.6923 9.67718 
+                        15.6923C10.9857 15.6923 12.2342 15.4361 13.3754 14.9712L11.2163 12.8121C10.7356 12.9836 10.2178 13.0769 9.67826 
+                        13.0769C7.1505 13.0769 5.10134 11.0278 5.10134 8.5Z"/>
+
+                    </svg>
+
+                    <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="showPassword" id="showIcon" style="display: none";>
+                        <path d="M19.9282 6.65457C17.6182 3.02457 14.2382 0.93457 10.6782 0.93457C8.89822 0.93457 7.16822 
+                        1.45457 5.58822 2.42457C4.00822 3.40457 2.58822 4.83457 1.42822 6.65457C0.428223 8.22457 0.428223 10.7746 
+                        1.42822 12.3446C3.73822 15.9846 7.11822 18.0646 10.6782 18.0646C12.4582 18.0646 14.1882 17.5446 15.7682 16.5746C17.3482 
+                        15.5946 18.7682 14.1646 19.9282 12.3446C20.9282 10.7846 20.9282 8.22457 19.9282 6.65457ZM10.6782 13.5446C8.43822 13.5446 
+                        6.63822 11.7346 6.63822 9.50457C6.63822 7.27457 8.43822 5.46457 10.6782 5.46457C12.9182 5.46457 14.7182 7.27457 14.7182 
+                        9.50457C14.7182 11.7346 12.9182 13.5446 10.6782 13.5446Z"/>
+                        <path d="M10.6781 6.64453C9.10813 6.64453 7.82812 7.92453 7.82812 9.50453C7.82812 11.0745 9.10813 12.3545 10.6781 
+                        12.3545C12.2481 12.3545 13.5381 11.0745 13.5381 9.50453C13.5381 7.93453 12.2481 6.64453 10.6781 6.64453Z" />
+                    </svg>
+
+                </button>
+            
+            </div>
+            <div id= "passwordError" class="error-message"></div>
+        </div>
+        
+        <div class="container">
+            <label for="confirmPassword"></label>
+            <div class="input-wrapper">
+                <input type="password" name="confirmPassword" id="confirmPassword" required autocomplete="off" placeholder="Repetir contraseña">
+                <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="passwordConfirm-icon">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.74302 0C4.39581 0 2.49302 1.90279 2.49302 4.25V6.67857C1.15176 6.67857 
+                    0.0644531 7.76588 0.0644531 9.10714V14.5714C0.0644531 15.9127 1.15176 17 2.49302 17H10.993C12.3343 17 13.4216 15.9127 13.4216 
+                    14.5714V9.10714C13.4216 7.76588 12.3343 6.67857 10.993 6.67857V4.25C10.993 1.90279 9.09023 0 6.74302 0ZM9.77874 6.67857V4.25C9.77874 
+                    2.57342 8.4196 1.21429 6.74302 1.21429C5.06645 1.21429 3.70731 2.57342 3.70731 4.25V6.67857H9.77874Z"/>
+                </svg>
+            </div>
+            <div id="confirmPasswordError" class="error-message"></div>
+        </div>
+        
+
+        <input type="submit" value="Iniciar Sesión">
+
+    </form>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
